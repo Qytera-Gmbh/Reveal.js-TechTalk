@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <title>Software Product Line Engineering in der Automobilindustrie</title>
+
+   <link rel="stylesheet" href="reveal.js/dist/reset.css">
+   <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+   <link rel="stylesheet" href="reveal.js/dist/theme/white.css">
+   <link rel="stylesheet" href="css/custom.css">
+   <link rel="stylesheet" href="reveal.js/plugin/pointer/pointer.css" />
+
+   <!-- Theme used for syntax highlighted code -->
+   <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+</head>
+
+<body>
+   <div class="reveal">
+      <div class="slides">
+         <section data-markdown="chapters/titel.md" data-separator="^\r?\n---\r?\n$"
+            data-separator-vertical="^\r?\n--\r?\n$">
+         </section>
+         <section data-markdown="chapters/wer-bin-ich.md" data-separator="^\r?\n---\r?\n$"
+            data-separator-vertical="^\r?\n--\r?\n$">
+         </section>
+         <section data-markdown="chapters/hintergrund.md" data-separator="^\r?\n---\r?\n$"
+            data-separator-vertical="^\r?\n--\r?\n$">
+         </section>
+         <section data-markdown="chapters/animation.md" data-separator="^\r?\n---\r?\n$"
+            data-separator-vertical="^\r?\n--\r?\n$">
+         </section>
+         <section data-markdown="chapters/code.md" data-separator="^\r?\n---\r?\n$"
+            data-separator-vertical="^\r?\n--\r?\n$">
+         </section>
+         <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers>
+              let planets = [
+                { name: 'mars', diameter: 6779 },
+              ]
+            </code></pre>
+         </section>
+         <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers>
+              let planets = [
+                { name: 'mars', diameter: 6779 },
+                { name: 'earth', diameter: 12742 },
+                { name: 'jupiter', diameter: 139820 }
+              ]
+            </code></pre>
+         </section>
+         <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers>
+              let circumferenceReducer = ( c, planet ) => {
+                return c + planet.diameter * Math.PI;
+              }
+          
+              let planets = [
+                { name: 'mars', diameter: 6779 },
+                { name: 'earth', diameter: 12742 },
+                { name: 'jupiter', diameter: 139820 }
+              ]
+          
+              let c = planets.reduce( circumferenceReducer, 0 )
+            </code></pre>
+         </section>
+         <section data-markdown="chapters/mathe.md" data-separator="^\r?\n---\r?\n$"
+            data-separator-vertical="^\r?\n--\r?\n$">
+         </section>
+         <section data-markdown="chapters/charts.md" data-separator="^\r?\n---\r?\n$"
+         data-separator-vertical="^\r?\n--\r?\n$">
+            
+         </section>
+         <section>
+            <h2>Features</h2>
+            <ul>
+               <li>Einfache Veröffentlichungen</li>
+               <li>Git-fähig</li>
+               <li>Auto-Slide</li>
+               <li>HTML</li>
+               <li>Markdown</li>
+               <li>Code Highlighting</li>
+               <li>Themes</li>
+               <li>Speaker Notes</li>
+               <li>Plugins (z.B. Charts)</li>
+               <li>PDF Export</li>
+               <li>Effektiv fast alles, was der Browser zu bieten hat</li>
+               <li>...</li>
+            </ul>
+         </section>
+         <section>
+            <h2>Vielen Dank. 👋</h2>
+         </section>
+      </div>
+   </div>
+
+   <script src="reveal.js/dist/reveal.js"></script>
+   <script src="reveal.js/plugin/notes/notes.js"></script>
+   <script src="reveal.js/plugin/markdown/markdown.js"></script>
+   <script src="reveal.js/plugin/highlight/highlight.js"></script>
+   <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   <script src="reveal.js/plugin/pointer/pointer.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+
+   <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+         pointer: {
+            key: "q", // key to enable pointer, default "q", not case-sensitive
+            color: "red", // color of a cursor, default "red" any valid CSS color
+            opacity: 0.8, // opacity of cursor, default 0.8
+            pointerSize: 30, // pointer size in px, default 12
+            alwaysVisible: false, // should pointer mode be always visible? default "false"
+            tailLength: 10, // NOT IMPLEMENTED YET!!! how long the "tail" should be? default 10
+         },
+         chart: {
+            defaults: {
+               color: 'lightgray', // color of labels
+               scale: {
+                  beginAtZero: true,
+                  ticks: { stepSize: 1 },
+                  grid: { color: "lightgray" }, // color of grid lines
+               },
+            },
+            line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+            bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+            pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+         },
+         hash: true,
+         slideNumber: true,
+         pdfSeparateFragments: false,
+         pdfMaxPagesPerSlide: 1,
+         // Learn about plugins: https://revealjs.com/plugins/
+         plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealPointer, RevealChart],
+         //width: "80%",
+         //height: "100%",
+      });
+   </script>
+</body>
+
+</html>
